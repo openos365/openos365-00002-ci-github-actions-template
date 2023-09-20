@@ -1,5 +1,12 @@
 # ci 模板使用
 
+
+## 0 项目使用此模板
+
+```
+curl https://ghproxy.com/raw.githubusercontent.com/openos365/openos365-00002-ci-github-actions-template/main/99.install.template.sh | bash
+```
+
 ## 1 最简单的情况模板 使用ubuntu-latest环境执行shell
 
 * TODO 1 初始化模板
