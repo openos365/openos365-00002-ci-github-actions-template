@@ -34,13 +34,14 @@ if [ ! -z $${GITHUB_REPOSITORY} ];then
     cat $HOME/.ssh/known_hosts
 
     # 4
-    ./6.template.update.from.00002.sh
+    sudo cp ./6.template.update.from.00002.sh /usr/bin/6.template.update.from.00002.sh
+    6.template.update.from.00002.sh
+    sudo cp ./p2 /usr/bin/p2
 
     # 5
     cd $CMD_PATH
-    git add .
-    git commit -a -m "CI-BOT:$(date +%Y.%m.%d-%H%M%S)-$GITHUB_REF_NAME-$GITHUB_RUN_NUMBER"
-    git push origin HEAD
+    p2 "CI-BOT:$(date +%Y.%m.%d-%H%M%S)-$GITHUB_REF_NAME-$GITHUB_RUN_NUMBER"
+
 
     # 6
     cd $CMD_PATH
@@ -60,8 +61,7 @@ if [ ! -z $${GITHUB_REPOSITORY} ];then
     apt list > 4.apt.list.txt
     apt list --installed > 5.apt.list.installed.txt
 
-    git add .
-    git commit -a -m "CI-BOT:$(date +%Y.%m.%d-%H%M%S)-$GITHUB_REF_NAME-$GITHUB_RUN_NUMBER"
-    git push origin HEAD
+    p2 "CI-BOT:$(date +%Y.%m.%d-%H%M%S)-$GITHUB_REF_NAME-$GITHUB_RUN_NUMBER"
+
 fi
 echo "============================================================================"
