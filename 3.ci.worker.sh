@@ -47,6 +47,12 @@ do
 done
 
 cd $CMD_PATH
+
+sudo apt update -y
+sudo apt upgrade -y
+apt list > 4.apt.list.txt
+apt list --installed > 5.apt.list.installed.txt
+
 git add .
 git commit -a -m "CI-BOT:$(date +%Y.%m.%d-%H%M%S)-$GITHUB_REF_NAME-$GITHUB_RUN_NUMBER"
 git push origin HEAD
