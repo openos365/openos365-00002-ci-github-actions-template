@@ -34,7 +34,7 @@ ssh-keyscan "github.com" >> $HOME/.ssh/known_hosts
 cat $HOME/.ssh/known_hosts
 
 # 4
-./99.00002.openos365.template.install.sh
+./6.template.update.sh
 
 # 5
 cd $CMD_PATH
