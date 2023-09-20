@@ -22,12 +22,14 @@ if [ "$1" == "1" ];then
 fi
 
 if [ "$1" == "2" ];then
-	cp -f ./2.ci.docker.build.runner.sh.template ./2.ci.docker.build.runner.sh
+	cp -f ./2.ci.docker.run.runner.sh.template ./2.ci.docker.run.runner.sh
 fi
 
 if [ "$1" == "3" ];then
-	cp -f ./3.ci.docker.run.runner.sh.template ./3.ci.docker.run.runner.sh
+	cp -f ./3.ci.docker.build.runner.sh.template ./3.ci.docker.build.runner.sh
 fi
+
+
 
 chmod +x *.template
 chmod +x *.sh
