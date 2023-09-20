@@ -4,7 +4,14 @@
 ## 0 项目使用此模板
 
 ```
-curl https://ghproxy.com/raw.githubusercontent.com/openos365/openos365-00002-ci-github-actions-template/main/99.install.template.sh | bash
+rm -rf 99.00002.openos365.template.install.sh
+
+wget https://ghproxy.com/raw.githubusercontent.com/openos365/openos365-00002-ci-github-actions-template/main/99.00002.openos365.template.install.sh
+
+chmod +x 99.00002.openos365.template.install.sh
+sudo cp -fv 99.00002.openos365.template.install.sh /usr/bin/99.00002.openos365.template.install.sh
+
+99.00002.openos365.template.install.sh 
 ```
 
 ## 1 最简单的情况模板 使用ubuntu-latest环境执行shell
