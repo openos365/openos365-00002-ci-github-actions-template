@@ -17,10 +17,14 @@ env
 
 echo "============================================================================"
 cd ~
+if [ ! -d openos365-00002-ci-github-actions-template ];then
+    git clone https://ghproxy.com/github.com/openos365/openos365-00002-ci-github-actions-template.git
+fi
 
-git clone https://ghproxy.com/github.com/openos365/openos365-00002-ci-github-actions-template.git
 cd openos365-00002-ci-github-actions-template
-git pull origin main
+if [ ! -z $1 ];then
+    git pull origin main
+fi
 
 rsync -avzP --exclude=".git" ~/openos365-00002-ci-github-actions-template/ $CMD_PATH/
 
