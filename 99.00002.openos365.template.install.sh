@@ -17,10 +17,11 @@ env
 
 echo "============================================================================"
 cd ~
-rm -rf
-git clone --depth=1 git@github.com:openos365/openos365-00002-ci-github-actions-template.git
-rm -rf openos365-00002-ci-github-actions-template/.git/
 
-rsync -avzP ~/openos365-00002-ci-github-actions-template/ $CMD_PATH/
+git clone https://ghproxy.com/github.com/openos365/openos365-00002-ci-github-actions-template.git
+cd openos365-00002-ci-github-actions-template
+git pull origin main
+
+rsync -avzP --exclude=".git" ~/openos365-00002-ci-github-actions-template/ $CMD_PATH/
 
 echo "============================================================================"
