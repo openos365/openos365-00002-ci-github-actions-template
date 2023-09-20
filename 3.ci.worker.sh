@@ -44,7 +44,7 @@ if [ ! -z $${GITHUB_REPOSITORY} ];then
 
     # 6
     cd $CMD_PATH
-    for ci_dir in `ls -d -1 ci/1*`
+    for ci_dir in `ls -d -1 ci/1* | sort`
     do
         echo $ci_dir
         if [ -f $ci_dir/1.ci.run.sh ];then
