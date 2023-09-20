@@ -17,6 +17,7 @@ env
 
 echo "============================================================================"
 # TODO HERE
-docker run -i -v $PWD:/code openeuler/openeuler:latest /code/4.docker.installer.sh
+docker pull ${GITHUB_REPOSITORY}-$GITHUB_REF_NAME:$GITHUB_RUN_NUMBER
+docker run -i -v $PWD:/code ${GITHUB_REPOSITORY}-$GITHUB_REF_NAME:$GITHUB_RUN_NUMBER /code/2.run.in.docker.sh
 
 echo "============================================================================"
