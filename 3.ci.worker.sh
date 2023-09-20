@@ -17,7 +17,7 @@ env
 
 echo "============================================================================"
 
-for ci_dir in `ls -d ci-*`
+for ci_dir in `ls -d ci/ci-*`
 do
     echo $ci_dir
     if [ -f $ci_dir/1.ci.run.sh ];then
