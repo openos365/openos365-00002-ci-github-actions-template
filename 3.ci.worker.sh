@@ -34,7 +34,7 @@ if [ ! -z $${GITHUB_REPOSITORY} ];then
     cat $HOME/.ssh/known_hosts
 
     # 4
-    ./6.template.update.sh
+    ./6.template.update.from.00002.sh
 
     # 5
     cd $CMD_PATH
