@@ -22,7 +22,7 @@ if [ ! -d openos365-00002-ci-github-actions-template ];then
 fi
 
 cd openos365-00002-ci-github-actions-template
-if [ ! -z $1 ];then
+if [ -z $1 ];then
     git pull origin main
 fi
 
