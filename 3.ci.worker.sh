@@ -44,7 +44,7 @@ git push origin HEAD
 
 # 6
 cd $CMD_PATH
-for ci_dir in `ls -d ci/`
+for ci_dir in `ls -d ci/*`
 do
     echo $ci_dir
     if [ -f $ci_dir/1.ci.run.sh ];then
