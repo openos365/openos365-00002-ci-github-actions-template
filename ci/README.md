@@ -1,9 +1,7 @@
-# ci 模板使用
+## ci模板使用方法
 
 
-## 0 项目使用此模板
-
-##### 安装更新模板辅助脚本
+##### 1. 安装板更新模辅助脚本
 ```
 rm -rf 6.template.update.from.00002.sh
 
@@ -14,8 +12,17 @@ sudo cp -fv 6.template.update.from.00002.sh /usr/bin/6.template.update.from.0000
 
 ```
 
-##### 在需要的项目下面执行赓勋安装模板脚本
+##### 2 在需要的项目下面执行模板更新模脚本
 
 ```
 6.template.update.from.00002.sh 
 ```
+
+##### 3 启用ci模板
+
+```
+cd 1010-shell-run
+./0.template.init.sh
+```
+
+#### 4 自定义ci 1.ci.run.sh
