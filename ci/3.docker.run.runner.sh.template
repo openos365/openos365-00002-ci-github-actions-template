@@ -17,9 +17,6 @@ env
 
 echo "============================================================================"
 # TODO HERE
-cp -f ./1.ci.shell.runner.sh.template ./1.ci.shell.runner.sh
-cp -f ./2.ci.docker.runner.sh.template ./2.ci.docker.runner.sh
-chmod +x *.template
-chmod +x *.sh
+docker run -i -v $PWD:/code openeuler/openeuler:latest /code/4.docker.installer.sh
 
 echo "============================================================================"
