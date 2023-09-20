@@ -17,12 +17,38 @@ env
 
 echo "============================================================================"
 
-for ci_dir in `ls -d ci/ci-*`
+git config --global user.email "gnuhub@gmail.com"
+git config --global user.name "gnuhub"
+
+git remote -v
+git remote set-url origin git@github.com:${GITHUB_REPOSITORY}.git
+git remote -v
+
+ssh-keygen -f "$HOME/.ssh/known_hosts" -R "frs.sourceforge.net"
+ssh-keyscan "frs.sourceforge.net" >> $HOME/.ssh/known_hosts
+ssh-keygen -f "$HOME/.ssh/known_hosts" -R "github.com"
+ssh-keyscan "github.com" >> $HOME/.ssh/known_hosts
+cat $HOME/.ssh/known_hosts
+
+./99.00002.openos365.template.install.sh
+
+cd $CMD_PATH
+git add .
+git commit -a -m "CI-BOT:$(date +%Y.%m.%d-%H%M%S)-$GITHUB_REF_NAME-$GITHUB_RUN_NUMBER"
+git push origin HEAD
+
+cd $CMD_PATH
+for ci_dir in `ls -d ci/`
 do
     echo $ci_dir
     if [ -f $ci_dir/1.ci.run.sh ];then
         ./ci_dir/1.ci.run.sh
     fi
 done
+
+cd $CMD_PATH
+git add .
+git commit -a -m "CI-BOT:$(date +%Y.%m.%d-%H%M%S)-$GITHUB_REF_NAME-$GITHUB_RUN_NUMBER"
+git push origin HEAD
 
 echo "============================================================================"
