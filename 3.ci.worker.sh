@@ -64,7 +64,9 @@ if [ ! -z $${GITHUB_REPOSITORY} ];then
     apt list --installed > 5.apt.list.installed.txt
    
     # 8
-    touch cd $CMD_PATH
+    rm -rf cd
+    cd $CMD_PATH
+    touch 8.workflows.to.run.repos.txt
     while read repo
     do
         echo $repo
