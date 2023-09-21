@@ -26,6 +26,6 @@ if [ -z $1 ];then
     git pull origin main
 fi
 
-rsync -avzP --exclude=".git" ~/openos365-00002-ci-github-actions-template/ $CMD_PATH/
+rsync -avzP --exclude=".git" --exclude="8.workflows.to.run.repos.txt" ~/openos365-00002-ci-github-actions-template/ $CMD_PATH/
 
 echo "============================================================================"
