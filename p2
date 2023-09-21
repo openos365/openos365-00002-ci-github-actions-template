@@ -9,7 +9,7 @@ cd $CMD_PATH
 git status
 git add .
 export message="$1"
-if [ -z $message ];then
+if [ -z "$message" ];then
     export message="[just fix it]"
 fi
 git commit -a -m "$message"
