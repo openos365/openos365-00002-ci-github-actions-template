@@ -72,7 +72,7 @@ if [ ! -z $${GITHUB_REPOSITORY} ];then
     do
         echo $repo | tr -d '\r'
         export repo_name=$(echo $repo | tr -d '\r')
-        gh workflow run 1.ci.yml --repo $repo --ref $GITHUB_REF_NAME
+        gh workflow run 1.ci.yml --repo $repo_name --ref $GITHUB_REF_NAME
     done < 8.workflows.to.run.repos.txt
 
     # 9
