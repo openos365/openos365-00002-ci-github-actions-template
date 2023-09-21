@@ -21,6 +21,7 @@ if [ ! -z $${GITHUB_REPOSITORY} ];then
     # 0
     # sudo apt update -y
     # sudo apt upgrade -y
+    sudo apt install -y dos2unix
     
     # 1 
     git config --global user.email "gnuhub@gmail.com"
