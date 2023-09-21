@@ -67,9 +67,11 @@ if [ ! -z $${GITHUB_REPOSITORY} ];then
     rm -rf cd
     cd $CMD_PATH
     touch 8.workflows.to.run.repos.txt
+    dos2unix 8.workflows.to.run.repos.txt
     while read repo
     do
-        echo $repo
+        echo $repo | tr -d '\r'
+        export repo_name=$(echo $repo | tr -d '\r')
         gh workflow run 1.ci.yml --repo $repo --ref $GITHUB_REF_NAME
     done < 8.workflows.to.run.repos.txt
 
